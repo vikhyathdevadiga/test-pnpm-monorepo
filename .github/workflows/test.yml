@@ -1,1 +1,16 @@
-echo "hello!!!"
+name: CI
+on:
+  push:
+    branches: 
+      - main
+  pull_request:
+    types: 
+      - opened
+      - synchronize
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo message
+        run: echo "Hi"
